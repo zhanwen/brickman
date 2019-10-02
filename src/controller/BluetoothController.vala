@@ -38,7 +38,7 @@ namespace BrickManager {
         Binding? selected_adapter_scanning_binding;
         uint connection_count = 0;
 
-        public string display_name { get { return "Bluetooth"; } }
+        public string display_name { get { return "蓝牙"; } }
 
         public bool connected { get { return connection_count > 0; } }
 

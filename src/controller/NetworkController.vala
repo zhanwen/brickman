@@ -65,7 +65,7 @@ namespace BrickManager {
 
         public WifiController wifi_controller;
 
-        public string display_name { get { return "Wireless and Networks"; } }
+        public string display_name { get { return "无线和网络"; } }
 
         public bool has_tether { get; set; }
         public string tether_address { get; set; }

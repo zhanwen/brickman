@@ -51,7 +51,7 @@ namespace BrickManager {
 
         public bool available { get; set; }
 
-        public string display_name { get { return "Open Roberta Lab"; } }
+        public string display_name { get { return "罗伯塔实验室"; } }
 
         public OpenRobertaController () {
             status_bar_item = new OpenRobertaStatusBarItem ();
