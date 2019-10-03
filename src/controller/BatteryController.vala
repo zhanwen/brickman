@@ -30,7 +30,7 @@ namespace BrickManager {
         internal BatteryStatusBarItem battery_status_bar_item;
         PowerSupply? system_power_supply;
 
-        public string display_name { get { return "Battery"; } }
+        public string display_name { get { return "电池"; } }
 
         public void show_main_window () {
             if (battery_window == null) {

@@ -34,7 +34,7 @@ namespace BrickManager {
         SensorBrowserWindow? sensor_browser_window;
         MotorBrowserWindow? motor_browser_window;
 
-        public string display_name { get { return "Device Browser"; } }
+        public string display_name { get { return "Device"; } }
 
         public void show_main_window () {
             if (device_browser_window == null) {
