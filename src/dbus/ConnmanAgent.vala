@@ -99,8 +99,7 @@ namespace BrickManager {
             required_field_names.reverse ();
             foreach (var required_field_name in required_field_names) {
                 var dialog = new ConnmanAgentInputDialog (
-                    "Please enter %s for %s.".printf (field_to_string (required_field_name),
-                        service.name),
+                    "请输入 %s 的 %s.".printf (service.name, field_to_string (required_field_name)),
                     previous_passphrase ?? "");
                 bool dialog_canceled = true;
                 weak ConnmanAgentInputDialog weak_dialog = dialog;
@@ -112,14 +111,14 @@ namespace BrickManager {
                 var handler_id = canceled.connect (() => {
                     dialog.responded (false);
                     dialog.close ();
-                    var message_dialog = new MessageDialog ("Info", "Request was canceled.");
+                    var message_dialog = new MessageDialog ("信息", "请求被取消.");
                     message_dialog.show ();
                 });
                 dialog.show ();
                 yield;
                 SignalHandler.disconnect (this, handler_id);
                 if (dialog_canceled) {
-                    throw new ConnmanAgentError.CANCELED ("Canceled by the user.");
+                    throw new ConnmanAgentError.CANCELED ("由用户取消.");
                 }
             }
             return result;
@@ -129,7 +128,7 @@ namespace BrickManager {
             HashTable<string, Variant> fields) throws ConnmanAgentError
         {
             //var peer = Peer.from_path_sync (peer_path);
-            throw new ConnmanAgentError.CANCELED ("Not implemented.");
+            throw new ConnmanAgentError.CANCELED ("未实现.");
         }
 
         public async void cancel () {
@@ -143,15 +142,15 @@ namespace BrickManager {
                     return "SSID";
                 case IDENTITY_KEY:
                 case USERNAME_KEY:
-                    return "username";
+                    return "用户名";
                 case PASSPHRASE_KEY:
-                    return "passphrase";
+                    return "口令";
                 case WPS_KEY:
                     return "WPS PIN";
                 case PASSWORD_KEY:
-                    return "password";
+                    return "密码";
                 default:
-                    critical ("Unexpected field '%s'", field);
+                    critical ("异常字段 '%s'", field);
                     return "???";
             }
         }

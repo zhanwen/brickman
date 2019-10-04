@@ -43,7 +43,7 @@ namespace BrickManager {
             if (Posix.uname (ref utsname) == 0) {
                 about_window.kernel_version = utsname.release;
             } else {
-                warning ("Failed to get kernel version.");
+                warning ("获取内核版本失败.");
             }
             about_window.model_name = Cpu.get_model ();
             about_window.revision = Cpu.get_revision ();

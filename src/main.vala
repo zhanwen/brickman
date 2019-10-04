@@ -91,7 +91,7 @@ namespace BrickManager {
                                     global_manager.set_leds (LedState.BUSY);
                                     app.quit ();
                                 } catch (IOError err) {
-                                    var dialog = new MessageDialog ("Error", err.message);
+                                    var dialog = new MessageDialog ("错误", err.message);
                                     dialog.show ();
                                 }
                             });
@@ -103,13 +103,13 @@ namespace BrickManager {
                                     global_manager.set_leds (LedState.BUSY);
                                     app.quit ();
                                 } catch (IOError err) {
-                                    var dialog = new MessageDialog ("Error", err.message);
+                                    var dialog = new MessageDialog ("错误", err.message);
                                     dialog.show ();
                                 }
                             });
                         });
                     } catch (IOError err) {
-                        var dialog = new MessageDialog ("Error", err.message);
+                        var dialog = new MessageDialog ("错误", err.message);
                         dialog.show ();
                     }
                 });

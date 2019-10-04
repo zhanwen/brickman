@@ -42,7 +42,7 @@ namespace BrickManager {
                 file = Path.build_filename (Ev3devKit.DATA_DIR, "bluetooth16x16.png");
                 idle_icon = Ev3devKit.Ui.Icon.create_context_from_png (file);
             } catch (GLib.Error err) {
-                critical ("Error loading icon '%s'.", file);
+                critical ("错误加载图标 '%s'.", file);
             }
             notify["connected"].connect (redraw);
         }

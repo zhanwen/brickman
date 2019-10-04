@@ -61,7 +61,7 @@ namespace BrickManager {
                 border_bottom = 1
             };
             dialog_vbox.add (title_label);
-            var message_label = new Label ("Enter PIN:");
+            var message_label = new Label ("输入 PIN:");
             dialog_vbox.add (message_label);
             // TODO: may need to allow alpha and symbol chars.
             var text_entry = new TextEntry ("1234            ") {
@@ -79,13 +79,13 @@ namespace BrickManager {
                 margin_bottom = 3
             };
             button_vbox.add (button_hbox);
-            var reject_button = new Button.with_label ("Reject");
+            var reject_button = new Button.with_label ("拒绝");
             reject_button.pressed.connect (() => {
                 result = ConfirmationDialogResult.REJECTED;
                 weak_dialog.close ();
             });
             button_hbox.add (reject_button);
-            var accept_button = new Button.with_label ("Accept");
+            var accept_button = new Button.with_label ("接受");
             accept_button.pressed.connect (() => {
                 result = ConfirmationDialogResult.ACCEPTED;
                 weak_dialog.close ();
@@ -95,16 +95,16 @@ namespace BrickManager {
             dialog.show ();
             yield;
             if (result == ConfirmationDialogResult.REJECTED)
-                throw new BlueZError.REJECTED ("Rejected.");
+                throw new BlueZError.REJECTED ("拒绝.");
             if (result == ConfirmationDialogResult.CANCELED)
-                throw new BlueZError.CANCELED ("Canceled.");
+                throw new BlueZError.CANCELED ("取消.");
             return text_entry.text.replace (" ", "");
         }
 
         public void display_pin_code (ObjectPath device_path, string pincode) {
             var device = Device.get_for_object_path (device_path);
             var dialog = new MessageDialog (device.alias,
-                "PIN code is:\n%s".printf (pincode));
+                "PIN 码是:\n%s".printf (pincode));
             weak Dialog weak_dialog = dialog;
             var canceled_handler_id = canceled.connect(() => {
                 dialog.close ();
@@ -139,7 +139,7 @@ namespace BrickManager {
                 border_bottom = 1
             };
             dialog_vbox.add (title_label);
-            var message_label = new Label ("Enter passkey");
+            var message_label = new Label ("输入配对码");
             dialog_vbox.add (message_label);
             var text_entry = new TextEntry ("000000") {
                 valid_chars = TextEntry.NUMERIC,
@@ -156,13 +156,13 @@ namespace BrickManager {
                 margin_bottom = 3
             };
             button_vbox.add (button_hbox);
-            var reject_button = new Button.with_label ("Reject");
+            var reject_button = new Button.with_label ("拒绝");
             reject_button.pressed.connect (() => {
                 result = ConfirmationDialogResult.REJECTED;
                 weak_dialog.close ();
             });
             button_hbox.add (reject_button);
-            var accept_button = new Button.with_label ("Accept");
+            var accept_button = new Button.with_label ("接受");
             accept_button.pressed.connect (() => {
                 result = ConfirmationDialogResult.ACCEPTED;
                 weak_dialog.close ();
@@ -172,9 +172,9 @@ namespace BrickManager {
             dialog.show ();
             yield;
             if (result == ConfirmationDialogResult.REJECTED)
-                throw new BlueZError.REJECTED ("Rejected.");
+                throw new BlueZError.REJECTED ("拒绝.");
             if (result == ConfirmationDialogResult.CANCELED)
-                throw new BlueZError.CANCELED ("Canceled.");
+                throw new BlueZError.CANCELED ("取消.");
             return (uint32)int.parse (text_entry.text);
         }
 
@@ -187,7 +187,7 @@ namespace BrickManager {
             if (display_passkey_dialog != null)
                 display_passkey_dialog.close ();
             display_passkey_dialog = new MessageDialog (device.alias,
-                "Passkey is: \n%s".printf ("%06u".printf (passkey)));
+                "配对码: \n%s".printf ("%06u".printf (passkey)));
             weak Dialog weak_dialog = display_passkey_dialog;
             var canceled_handler_id = canceled.connect(() => {
                 display_passkey_dialog.close ();
@@ -211,7 +211,7 @@ namespace BrickManager {
         {
             var device = Device.get_for_object_path (device_path);
             yield display_confirmation_dialog (device.alias,
-                "Confirm passkey\n%s".printf ("%06u".printf (passkey)));
+                "确认配对码\n%s".printf ("%06u".printf (passkey)));
         }
 
         public async void request_authorization (ObjectPath device_path)
@@ -219,7 +219,7 @@ namespace BrickManager {
         {
             var device = Device.get_for_object_path (device_path);
             yield display_confirmation_dialog (device.alias,
-                "Authorize\nthis device?");
+                "授权\n此设备?");
         }
 
         public async void authorize_service (ObjectPath device_path, string uuid)
@@ -227,7 +227,7 @@ namespace BrickManager {
         {
             var device = Device.get_for_object_path (device_path);
             yield display_confirmation_dialog (device.alias,
-                "Authorize service\n%s?".printf (Uuid.to_short_profile (uuid)));
+                "授权服务\n%s?".printf (Uuid.to_short_profile (uuid)));
         }
 
         async void display_confirmation_dialog (string title, string message) throws BlueZError {
@@ -261,13 +261,13 @@ namespace BrickManager {
                 margin = 3
             };
             button_vbox.add (button_hbox);
-            var reject_button = new Button.with_label ("Reject");
+            var reject_button = new Button.with_label ("拒绝");
             reject_button.pressed.connect (() => {
                 result = ConfirmationDialogResult.REJECTED;
                 weak_dialog.close ();
             });
             button_hbox.add (reject_button);
-            var accept_button = new Button.with_label ("Accept");
+            var accept_button = new Button.with_label ("接受");
             accept_button.pressed.connect (() => {
                 result = ConfirmationDialogResult.ACCEPTED;
                 weak_dialog.close ();
@@ -277,9 +277,9 @@ namespace BrickManager {
             accept_button.focus ();
             yield;
             if (result == ConfirmationDialogResult.REJECTED)
-                throw new BlueZError.REJECTED ("Rejected.");
+                throw new BlueZError.REJECTED ("拒绝.");
             if (result == ConfirmationDialogResult.CANCELED)
-                throw new BlueZError.CANCELED ("Canceled.");
+                throw new BlueZError.CANCELED ("取消.");
         }
 
         public void cancel () {

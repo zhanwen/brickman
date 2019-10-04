@@ -65,7 +65,7 @@ namespace BrickManager {
                             try {
                                 set_directory.end (res);
                             } catch (Error err) {
-                                var dialog = new MessageDialog ("Error", err.message);
+                                var dialog = new MessageDialog ("错误", err.message);
                                 dialog.show ();
                             }
                         });
@@ -107,14 +107,14 @@ namespace BrickManager {
                                                 Posix.chown (err_log_filename, uid, gid);
                                             }
                                         } catch (Error err) {
-                                            warning ("Error writing log file: %s", err.message);
+                                            warning ("写入日志文件出错: %s", err.message);
                                         }
                                     });
                             } catch (Error err) {
-                                warning ("Failed to create error log: %s", err.message);
+                                warning ("创建错误日志失败: %s", err.message);
                             }
                         } catch (SpawnError err) {
-                            var dialog = new MessageDialog ("Error", err.message);
+                            var dialog = new MessageDialog ("错误", err.message);
                             dialog.show ();
                         }
                     } else {
@@ -123,7 +123,7 @@ namespace BrickManager {
                         dialog.show ();
                     }
                 } catch (Error err) {
-                    var dialog = new MessageDialog ("Error", err.message);
+                    var dialog = new MessageDialog ("错误", err.message);
                     dialog.show ();
                 }
             });
