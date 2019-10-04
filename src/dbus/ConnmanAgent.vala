@@ -99,7 +99,7 @@ namespace BrickManager {
             required_field_names.reverse ();
             foreach (var required_field_name in required_field_names) {
                 var dialog = new ConnmanAgentInputDialog (
-                    "请输入 %s 的 %s.".printf (service.name, field_to_string (required_field_name)),
+                    "请输入 %s 的%s.".printf (service.name, field_to_string (required_field_name)),
                     previous_passphrase ?? "");
                 bool dialog_canceled = true;
                 weak ConnmanAgentInputDialog weak_dialog = dialog;
