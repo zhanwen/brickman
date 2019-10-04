@@ -74,7 +74,7 @@ namespace BrickManager {
         public WifiWindow () {
             title = "Wi-Fi";
             content_vbox.spacing = 0;
-            powered_menu_item = new CheckboxMenuItem ("电源");
+            powered_menu_item = new CheckboxMenuItem ("开关");
             powered_menu_item.button.vertical_align = WidgetAlign.START;
             weak Ui.MenuItem weak_powered_menu_item = powered_menu_item;
             powered_menu_item.button.pressed.connect (() => {
