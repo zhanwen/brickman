@@ -55,7 +55,7 @@ namespace BrickManager {
         public async void report_error (ObjectPath service_path, string error)
             throws ConnmanAgentError
         {
-            var dialog = new MessageDialog ("Error", error);
+            var dialog = new MessageDialog ("错误", error);
             dialog.show ();
             // TODO: get user feedback for retry
             //throw new ConnmanAgentError.RETRY ("User requested retry.");
@@ -64,7 +64,7 @@ namespace BrickManager {
         public async void report_peer_error (ObjectPath peer_path, string error)
             throws ConnmanAgentError
         {
-            var dialog = new MessageDialog ("Error", error);
+            var dialog = new MessageDialog ("错误", error);
             dialog.show ();
             // TODO: get user feedback for retry
             //throw new ConnmanAgentError.RETRY ("User requested retry.");
