@@ -75,7 +75,7 @@ namespace BrickManager {
             content_vbox.add (vscroll);
             scroll_vbox = new Box.vertical ();
             vscroll.add (scroll_vbox);
-            var device_name_label = new Label ("Device name:") {
+            var device_name_label = new Label ("设备名称:") {
                 margin_top = SPACING,
                 can_focus = true
             };
@@ -94,19 +94,19 @@ namespace BrickManager {
             scroll_vbox.add (driver_name_label);
             var driver_name_value_label = new Label (driver_name);
             scroll_vbox.add (driver_name_value_label);
-            var mode_label = new Label ("Mode:") {
+            var mode_label = new Label ("模式:") {
                 margin_top = SPACING
             };
             scroll_vbox.add (mode_label);
             mode_value_label = new Label ("???");
             scroll_vbox.add (mode_value_label);
-            var status_label = new Label ("Status:") {
+            var status_label = new Label ("状态:") {
                 margin_top = SPACING
             };
             scroll_vbox.add (status_label);
             status_value_label = new Label ("???");
             scroll_vbox.add (status_value_label);
-            set_device_button = new Button.with_label ("Set device") {
+            set_device_button = new Button.with_label ("设备设置") {
                 margin = SPACING,
                 margin_bottom = 0
             };

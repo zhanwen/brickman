@@ -66,10 +66,10 @@ namespace BrickManager {
             network_connections_menu_item = new Ui.MenuItem.with_right_arrow ("所有网络连接");
             network_connections_menu_item.button.pressed.connect (() => network_connections_selected ());
             menu.add_menu_item (network_connections_menu_item);
-            var tethering_menu_item = new Ui.MenuItem.with_right_arrow ("Tethering");
+            var tethering_menu_item = new Ui.MenuItem.with_right_arrow ("共享");
             tethering_menu_item.button.pressed.connect (() => tethering_selected ());
             menu.add_menu_item (tethering_menu_item);
-            offline_mode_menu_item = new CheckboxMenuItem ("Offline Mode");
+            offline_mode_menu_item = new CheckboxMenuItem ("离线模式");
             offline_mode_menu_item.checkbox.notify["checked"].connect ((s, p) => {
                 notify_property ("offline-mode");
             });

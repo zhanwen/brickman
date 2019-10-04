@@ -33,7 +33,7 @@ namespace BrickManager {
         public signal void connection_selected (Object user_data);
 
         public NetworkConnectionsWindow () {
-            title = "All Network Connections";
+            title = "所有网络连接";
             menu = new Ui.Menu () {
                 spacing = 2
             };

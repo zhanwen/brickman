@@ -34,12 +34,12 @@ namespace BrickManager {
         public signal void tethering_info_selected ();
 
         public TetheringWindow () {
-            title = "Tethering";
+            title = "共享";
             menu = new Ui.Menu () {
                 margin_top = -3
             };
             content_vbox.add (menu);
-            tethering_info_menu_item = new Ui.MenuItem.with_right_arrow ("Network info");
+            tethering_info_menu_item = new Ui.MenuItem.with_right_arrow ("网络信息");
             tethering_info_menu_item.button.pressed.connect (() => tethering_info_selected ());
             tethering_info_menu_item.label.text_horizontal_align = Grx.TextHAlign.LEFT;
             menu.add_menu_item (tethering_info_menu_item);

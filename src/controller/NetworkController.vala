@@ -649,16 +649,16 @@ namespace BrickManager {
         {
             switch (source_value.get_enum ()) {
             case ManagerState.OFFLINE:
-                target_value.set_string ("Offline");
+                target_value.set_string ("离线");
                 break;
             case ManagerState.IDLE:
-                target_value.set_string ("No connections");
+                target_value.set_string ("没有连接");
                 break;
             case ManagerState.READY:
-                target_value.set_string ("Connected");
+                target_value.set_string ("已连接");
                 break;
             case ManagerState.ONLINE:
-                target_value.set_string ("Online");
+                target_value.set_string ("在线");
                 break;
             default:
                 return false;
@@ -671,25 +671,25 @@ namespace BrickManager {
         {
             switch (source_value.get_enum ()) {
             case ServiceState.IDLE:
-                target_value.set_string ("Disconnected");
+                target_value.set_string ("未连接");
                 break;
             case ServiceState.FAILURE:
-                target_value.set_string ("Failed");
+                target_value.set_string ("失败");
                 break;
             case ServiceState.ASSOCIATION:
-                target_value.set_string ("Associating");
+                target_value.set_string ("正在连接");
                 break;
             case ServiceState.CONFIGURATION:
-                target_value.set_string ("Configuring");
+                target_value.set_string ("正在配置");
                 break;
             case ServiceState.READY:
-                target_value.set_string ("Connected");
+                target_value.set_string ("已连接");
                 break;
             case ServiceState.DISCONNECT:
-                target_value.set_string ("Disconnecting");
+                target_value.set_string ("正在断开连接");
                 break;
             case ServiceState.ONLINE:
-                target_value.set_string ("Online");
+                target_value.set_string ("在线");
                 break;
             default:
                 return false;
@@ -744,19 +744,19 @@ namespace BrickManager {
         {
             switch (source_value.get_enum ()) {
             case ServiceState.IDLE:
-                target_value.set_string ("Connect");
+                target_value.set_string ("连接");
                 break;
             case ServiceState.FAILURE:
-                target_value.set_string ("Reset");
+                target_value.set_string ("重置");
                 break;
             case ServiceState.READY:
             case ServiceState.ONLINE:
             case ServiceState.DISCONNECT:
-                target_value.set_string ("Disconnect");
+                target_value.set_string ("断开连接");
                 break;
             case ServiceState.ASSOCIATION:
             case ServiceState.CONFIGURATION:
-                target_value.set_string ("Cancel");
+                target_value.set_string ("取消");
                 break;
             default:
                 return false;

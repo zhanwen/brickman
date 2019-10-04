@@ -39,7 +39,7 @@ namespace BrickManager {
 
         public ShutdownDialog () {
             dialog_vbox = new Box.vertical ();
-            title = new Label ("关机...") {
+            title = new Label ("电源") {
                 padding = 2,
                 border_bottom = 1
             };

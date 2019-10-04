@@ -57,7 +57,7 @@ namespace BrickManager {
             cancel_button = new Button.with_label ("取消");
             cancel_button.pressed.connect (on_cancel_button_pressed);
             button_hbox.add (cancel_button);
-            accept_button = new Button.with_label ("接受");
+            accept_button = new Button.with_label ("确认");
             accept_button.pressed.connect (on_accept_button_pressed);
             button_hbox.add (accept_button);
             add (dialog_vbox);
