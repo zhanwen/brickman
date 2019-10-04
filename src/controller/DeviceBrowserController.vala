@@ -86,7 +86,7 @@ namespace BrickManager {
                         try {
                             port.set_device (item);
                         } catch (Error err) {
-                            var error_dialog = new MessageDialog ("Error", err.message);
+                            var error_dialog = new MessageDialog ("错误", err.message);
                             error_dialog.show ();
                         }
                     });
@@ -107,7 +107,7 @@ namespace BrickManager {
                         try {
                             port.set_mode (item);
                         } catch (Error err) {
-                            var error_dialog = new MessageDialog ("Error", err.message);
+                            var error_dialog = new MessageDialog ("错误", err.message);
                             error_dialog.show ();
                         }
                     });
@@ -123,8 +123,8 @@ namespace BrickManager {
                     mode_dialog.show ();
                 });
                 var notify_connected_handler_id = port.notify["connected"].connect (() => {
-                    var dialog = new MessageDialog ("Port Removed",
-                        "Port %s was disconnected.".printf (port.address));
+                    var dialog = new MessageDialog ("端口移除",
+                        "端口 %s 已断开连接.".printf (port.address));
                     dialog.show ();
                     window.close ();
                 });
@@ -197,7 +197,7 @@ namespace BrickManager {
                                 value_dialog.value_text += " %s".printf (sensor.units);
                         } catch (Error err) {
                             value_dialog.close ();
-                            var error_dialog = new MessageDialog ("Error", err.message);
+                            var error_dialog = new MessageDialog ("错误", err.message);
                             error_dialog.show ();
                             // this Timeout is removed by the value_dialog.closed hander
                             // so we just fall through and return CONTINUE here instead
@@ -222,7 +222,7 @@ namespace BrickManager {
                         try {
                             sensor.set_mode (item);
                         } catch (Error err) {
-                            var error_dialog = new MessageDialog ("Error", err.message);
+                            var error_dialog = new MessageDialog ("错误", err.message);
                             error_dialog.show ();
                         }
                     });
@@ -243,7 +243,7 @@ namespace BrickManager {
                         try {
                             sensor.send_command (item);
                         } catch (Error err) {
-                            var error_dialog = new MessageDialog ("Error", err.message);
+                            var error_dialog = new MessageDialog ("错误", err.message);
                             error_dialog.show ();
                         }
                     });

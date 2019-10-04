@@ -119,7 +119,7 @@ namespace BrickManager {
                         }
                     } else {
                         var dialog = new MessageDialog (file.get_basename (),
-                            "This file is not a directory or an executable.");
+                            "该文件不是目录或可执行文件.");
                         dialog.show ();
                     }
                 } catch (Error err) {

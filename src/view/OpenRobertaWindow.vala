@@ -155,8 +155,8 @@ namespace BrickManager {
         }
 
         public static void show_no_custom_server_address_dialog () {
-            var dialog = new MessageDialog ("No Address",
-                "Use the Edit button to enter the name or address of the server.");
+            var dialog = new MessageDialog ("无地址",
+                "使用编辑按钮输入服务器的名称或地址.");
             dialog.show ();
         }
 
@@ -165,7 +165,7 @@ namespace BrickManager {
                 margin_top = 12
             };
             label.font = Fonts.get_big ();
-            pin_dialog = new MessageDialog.with_content ("Pairing code", label);
+            pin_dialog = new MessageDialog.with_content ("配对码", label);
             ulong pin_dialog_closed_id = 0;
             pin_dialog_closed_id = pin_dialog.closed.connect (() => {
                 pin_dialog.disconnect (pin_dialog_closed_id);

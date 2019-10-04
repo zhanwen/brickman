@@ -102,7 +102,7 @@ namespace BrickManager {
 
             var address_hbox = new Box.horizontal ();
             scroll_vbox.add (address_hbox);
-            var address_label = new Label ("IP Address:") {
+            var address_label = new Label ("IP 地址:") {
                 horizontal_align = WidgetAlign.START
             };
             address_hbox.add (address_label);

@@ -329,7 +329,7 @@ namespace BrickManager {
                     try {
                         technology.scan.end (res);
                     } catch (Error err) {
-                        var dialog = new MessageDialog ("Error", err.message);
+                        var dialog = new MessageDialog ("错误", err.message);
                         dialog.show ();
                     }
                     wifi_window.scanning = false;
@@ -446,8 +446,8 @@ namespace BrickManager {
 
             var handler_id = service.removed.connect (() => {
                 weak_connection_window.close ();
-                var dialog = new MessageDialog ("Network",
-                    "%s is no longer available.".printf (service.name));
+                var dialog = new MessageDialog ("网络",
+                    "%s 已断开.".printf (service.name));
                 dialog.show ();
             });
             connection_window.closed.connect (() => {
@@ -486,7 +486,7 @@ namespace BrickManager {
                     try {
                         service.remove.end (res);
                     } catch (Error err) {
-                        var dialog = new MessageDialog ("Error", err.message);
+                        var dialog = new MessageDialog ("错误", err.message);
                         dialog.show ();
                     }
                 });
@@ -497,7 +497,7 @@ namespace BrickManager {
             weak Window weak_info_window = info_window;
             var handler_id = service.removed.connect (() => {
                 var dialog = new MessageDialog ("Wi-Fi",
-                    "%s is no longer available.".printf (service.name));
+                    "%s 已断开.".printf (service.name));
                 dialog.show ();
                 weak_info_window.close ();
             });
@@ -515,7 +515,7 @@ namespace BrickManager {
                     try {
                         service.connect_service.end (res);
                     } catch (Error err) {
-                        var dialog = new MessageDialog ("Error", err.message);
+                        var dialog = new MessageDialog ("错误", err.message);
                         dialog.show ();
                     }
                 });
@@ -525,7 +525,7 @@ namespace BrickManager {
                     try {
                         service.remove.end (res);
                     } catch (Error err) {
-                        var dialog = new MessageDialog ("Error", err.message);
+                        var dialog = new MessageDialog ("错误", err.message);
                         dialog.show ();
                     }
                 });
@@ -539,7 +539,7 @@ namespace BrickManager {
                     try {
                         service.disconnect_service.end (res);
                     } catch (Error err) {
-                        var dialog = new MessageDialog ("Error", err.message);
+                        var dialog = new MessageDialog ("错误", err.message);
                         dialog.show ();
                     }
                 });
@@ -555,7 +555,7 @@ namespace BrickManager {
                     connection_window.is_connect_busy = true;
                     yield service.disconnect_service ();
                 } catch (IOError err) {
-                    var dialog = new MessageDialog ("Error", err.message);
+                    var dialog = new MessageDialog ("错误", err.message);
                     dialog.show ();
                     connection_window.is_connect_busy = false;
                 }
@@ -565,7 +565,7 @@ namespace BrickManager {
                     // Do long timeout for WiFi since we have to wait for password entry
                     yield service.connect_service (service.service_type == "wifi");
                 } catch (IOError err) {
-                    var dialog = new MessageDialog ("Error", err.message);
+                    var dialog = new MessageDialog ("错误", err.message);
                     dialog.show ();
                     connection_window.is_connect_busy = false;
                 }
