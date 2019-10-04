@@ -54,7 +54,7 @@ namespace BrickManager {
         }
 
         public TetheringInfoWindow () {
-            title = "Tethering Network Info";
+            title = "共享网络信息";
             var vscroll = new Scroll.vertical () {
                 margin_top = -3
             };
@@ -66,11 +66,11 @@ namespace BrickManager {
                 margin = 3
             };
             scroll_vbox.add (ipv4_label);
-            var ipv4_address_label = new Label ("IP Address:");
+            var ipv4_address_label = new Label ("IP 地址:");
             scroll_vbox. add (ipv4_address_label);
             ipv4_address_value_label = new Label ("???");
             scroll_vbox. add (ipv4_address_value_label);
-            var ipv4_netmask_label = new Label ("Mask:") {
+            var ipv4_netmask_label = new Label ("子网掩码:") {
                 margin_top = 3
             };
             scroll_vbox. add (ipv4_netmask_label);

@@ -31,7 +31,7 @@ namespace BrickManager {
         const ushort END_WIDTH = 2;
         const ushort END_OFFEST = 2;
         const ushort PADDING = 1;
-        const ushort TOP = 1;
+        const ushort TOP = 0.5;
         static Font font;
 
         static construct {
