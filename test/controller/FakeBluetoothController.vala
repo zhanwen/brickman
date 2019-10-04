@@ -29,7 +29,7 @@ namespace BrickManager {
         BluetoothWindow bluetooth_window;
         public BluetoothStatusBarItem bluetooth_status_bar_item;
 
-        public string display_name { get { return "Bluetooth"; } }
+        public string display_name { get { return "蓝牙"; } }
 
         public signal void show_network_connection_requested (string address);
 

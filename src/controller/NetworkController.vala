@@ -329,7 +329,7 @@ namespace BrickManager {
                     try {
                         technology.scan.end (res);
                     } catch (Error err) {
-                        var dialog = new MessageDialog ("错误", err.message);
+                        var dialog = new MessageDialog ("错误", "连接失败");
                         dialog.show ();
                     }
                     wifi_window.scanning = false;
@@ -486,7 +486,7 @@ namespace BrickManager {
                     try {
                         service.remove.end (res);
                     } catch (Error err) {
-                        var dialog = new MessageDialog ("错误", err.message);
+                        var dialog = new MessageDialog ("错误", "连接失败");
                         dialog.show ();
                     }
                 });
@@ -515,7 +515,7 @@ namespace BrickManager {
                     try {
                         service.connect_service.end (res);
                     } catch (Error err) {
-                        var dialog = new MessageDialog ("错误", err.message);
+                        var dialog = new MessageDialog ("错误", "连接失败");
                         dialog.show ();
                     }
                 });
@@ -525,7 +525,7 @@ namespace BrickManager {
                     try {
                         service.remove.end (res);
                     } catch (Error err) {
-                        var dialog = new MessageDialog ("错误", err.message);
+                        var dialog = new MessageDialog ("错误", "连接失败");
                         dialog.show ();
                     }
                 });
@@ -539,7 +539,7 @@ namespace BrickManager {
                     try {
                         service.disconnect_service.end (res);
                     } catch (Error err) {
-                        var dialog = new MessageDialog ("错误", err.message);
+                        var dialog = new MessageDialog ("错误", "连接失败");
                         dialog.show ();
                     }
                 });
@@ -555,7 +555,7 @@ namespace BrickManager {
                     connection_window.is_connect_busy = true;
                     yield service.disconnect_service ();
                 } catch (IOError err) {
-                    var dialog = new MessageDialog ("错误", err.message);
+                    var dialog = new MessageDialog ("错误", "连接失败");
                     dialog.show ();
                     connection_window.is_connect_busy = false;
                 }
@@ -565,7 +565,7 @@ namespace BrickManager {
                     // Do long timeout for WiFi since we have to wait for password entry
                     yield service.connect_service (service.service_type == "wifi");
                 } catch (IOError err) {
-                    var dialog = new MessageDialog ("错误", err.message);
+                    var dialog = new MessageDialog ("错误", "连接失败");
                     dialog.show ();
                     connection_window.is_connect_busy = false;
                 }
