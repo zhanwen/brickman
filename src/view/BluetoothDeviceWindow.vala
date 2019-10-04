@@ -70,7 +70,7 @@ namespace BrickManager {
             address_label = new Label ();
             content_vbox.add (address_label);
             content_vbox.add (new Spacer ());
-            network_button = new Button.with_label ("Network Connection") {
+            network_button = new Button.with_label ("网络连接") {
                 visible = false,
                 margin_left = 6,
                 margin_right = 6
@@ -88,7 +88,7 @@ namespace BrickManager {
                 connect_selected ();
             });
             button_hbox.add (connect_button);
-            remove_button = new Button.with_label ("Remove");
+            remove_button = new Button.with_label ("移除");
             remove_button.pressed.connect (() => {
                 focus_none ();
                 remove_selected ();
@@ -98,7 +98,7 @@ namespace BrickManager {
 
         void update_buttons () {
             ((Label)connect_button.child).text = _paired ?
-                (_connected ? "Disconnect" : "Connect") : "Pair";
+                (_connected ? "断开连接" : "连接") : "配对";
             network_button.visible = _paired && _has_network;
         }
 

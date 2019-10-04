@@ -61,31 +61,31 @@ namespace BrickManager {
             scroll_vbox.add (new Label ("%s v%s".printf (EXEC_NAME, VERSION)));
             scroll_vbox.add (new Label ("The ev3dev Brick Manager"));
             scroll_vbox.add (new Label ("(C) 2014-2015 ev3dev.org"));
-            scroll_vbox.add (new Label ("System Info") {
+            scroll_vbox.add (new Label ("系统信息") {
                 border_bottom = 1,
                 padding_bottom = 3,
                 margin_top = 6
             });
 
-            scroll_vbox.add (new Label ("Kernel:") {
+            scroll_vbox.add (new Label ("内核:") {
                 margin_top = 6
             });
             kernel_label = new Label ("???");
             scroll_vbox.add (kernel_label);
 
-            scroll_vbox.add (new Label ("Model:") {
+            scroll_vbox.add (new Label ("模型:") {
                 margin_top = 6
             });
             model_label = new Label ("???");
             scroll_vbox.add (model_label);
 
-            scroll_vbox.add (new Label ("Revision:") {
+            scroll_vbox.add (new Label ("修订:") {
                 margin_top = 6
             });
             revision_label = new Label ("???");
             scroll_vbox.add (revision_label);
 
-            scroll_vbox.add (new Label ("Serial Number:") {
+            scroll_vbox.add (new Label ("序列号:") {
                 margin_top = 6
             });
             serial_number_label = new Label ("???");

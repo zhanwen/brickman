@@ -29,7 +29,7 @@ namespace BrickManager {
         internal Ui.Menu menu;
 
         public SensorBrowserWindow () {
-            title ="Sensors";
+            title ="传感器";
             menu = new Ui.Menu () {
                 margin_top = -3
             };

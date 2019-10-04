@@ -36,15 +36,15 @@ namespace BrickManager {
             title = display_name;
             menu = new Ui.Menu ();
             content_vbox.add (menu);
-            var ports_menu_item = new Ui.MenuItem.with_right_arrow ("Ports");
+            var ports_menu_item = new Ui.MenuItem.with_right_arrow ("端口");
             ports_menu_item.button.pressed.connect (() =>
                 ports_menu_item_selected ());
             menu.add_menu_item (ports_menu_item);
-            var sensors_menu_item = new Ui.MenuItem.with_right_arrow ("Sensors");
+            var sensors_menu_item = new Ui.MenuItem.with_right_arrow ("传感器");
             sensors_menu_item.button.pressed.connect (() =>
                 sensors_menu_item_selected ());
             menu.add_menu_item (sensors_menu_item);
-            var motors_menu_item = new Ui.MenuItem.with_right_arrow ("Motors");
+            var motors_menu_item = new Ui.MenuItem.with_right_arrow ("发动机");
             motors_menu_item.button.pressed.connect (() =>
                 motors_menu_item_selected ());
             menu.add_menu_item (motors_menu_item);

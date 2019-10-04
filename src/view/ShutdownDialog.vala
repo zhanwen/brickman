@@ -39,7 +39,7 @@ namespace BrickManager {
 
         public ShutdownDialog () {
             dialog_vbox = new Box.vertical ();
-            title = new Label ("Shutdown...") {
+            title = new Label ("关机...") {
                 padding = 2,
                 border_bottom = 1
             };
@@ -49,13 +49,13 @@ namespace BrickManager {
                 margin_top = 2
             };
             dialog_vbox.add (button_vbox);
-            power_off_button = new Button.with_label ("Power Off");
+            power_off_button = new Button.with_label ("关机");
             power_off_button.pressed.connect (on_power_off_button_pressed);
             button_vbox.add (power_off_button);
-            reboot_button = new Button.with_label ("Reboot");
+            reboot_button = new Button.with_label ("重启");
             reboot_button.pressed.connect (on_reboot_button_pressed);
             button_vbox.add (reboot_button);
-            cancel_button = new Button.with_label ("Cancel");
+            cancel_button = new Button.with_label ("取消");
             cancel_button.pressed.connect (on_cancel_button_pressed);
             button_vbox.add (cancel_button);
             add (dialog_vbox);

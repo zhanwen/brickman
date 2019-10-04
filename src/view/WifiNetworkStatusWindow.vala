@@ -60,7 +60,7 @@ namespace BrickManager {
                 border_bottom = 1
             };
             content_vbox.add (status_hbox);
-            var status_label = new Label ("Status:") {
+            var status_label = new Label ("状态:") {
                 text_horizontal_align = Grx.TextHAlign.RIGHT
             };
             status_hbox.add (status_label);
@@ -80,7 +80,7 @@ namespace BrickManager {
 
             var signal_hbox = new Box.horizontal ();
             scroll_vbox.add (signal_hbox);
-            var signal_label = new Label ("Signal:") {
+            var signal_label = new Label ("信号:") {
                 horizontal_align = WidgetAlign.START
             };
             signal_hbox.add (signal_label);
@@ -91,7 +91,7 @@ namespace BrickManager {
 
             var security_hbox = new Box.horizontal ();
             scroll_vbox.add (security_hbox);
-            var security_label = new Label ("Security:") {
+            var security_label = new Label ("安全:") {
                 horizontal_align = WidgetAlign.START
             };
             security_hbox.add (security_label);

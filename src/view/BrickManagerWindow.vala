@@ -80,12 +80,12 @@ using Ev3devKit.Ui;
             content_vbox = new Box.vertical ();
             window_stack.add (content_vbox);
 
-            loading_label = new Label ("Loading...") {
+            loading_label = new Label ("加载...") {
                 margin_bottom = 30
             };
             window_stack.add (loading_label);
 
-            not_available_label = new Label ("Not available") {
+            not_available_label = new Label ("不可用") {
                 margin_bottom = 30
             };
             window_stack.add (not_available_label);

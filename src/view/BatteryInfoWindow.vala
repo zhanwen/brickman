@@ -97,7 +97,7 @@ namespace BrickManager {
             title = display_name;
             info_grid = new Grid (4, 2);
             content_vbox.add (info_grid);
-            tech_label = new Label ("Type:") {
+            tech_label = new Label ("类型:") {
                 horizontal_align = WidgetAlign.END,
                 padding = 2
             };
@@ -105,7 +105,7 @@ namespace BrickManager {
                 horizontal_align = WidgetAlign.START,
                 padding = 2
             };
-            voltage_label = new Label ("Voltage:") {
+            voltage_label = new Label ("电压:") {
                 horizontal_align = WidgetAlign.END,
                 padding = 2
             };
@@ -113,7 +113,7 @@ namespace BrickManager {
                 horizontal_align = WidgetAlign.START,
                 padding = 2
             };
-            current_label = new Label ("Current:") {
+            current_label = new Label ("当前:") {
                 horizontal_align = WidgetAlign.END,
                 padding = 2
             };
@@ -121,7 +121,7 @@ namespace BrickManager {
                 horizontal_align = WidgetAlign.START,
                 padding = 2
             };
-            power_label = new Label ("Power:") {
+            power_label = new Label ("电源:") {
                 horizontal_align = WidgetAlign.END,
                 padding = 2
             };

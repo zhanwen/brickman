@@ -62,7 +62,7 @@ namespace BrickManager {
             get { return _scanning; }
             set {
                 _scanning = value;
-                scan_menu_item.label.text = value ? "Stop Scan" : "Start Scan";
+                scan_menu_item.label.text = value ? "停止扫描" : "开始扫描";
             }
         }
 
@@ -71,7 +71,7 @@ namespace BrickManager {
         public BluetoothWindow (string display_name) {
             title = display_name;
             content_vbox.spacing = 0;
-            powered_menu_item = new CheckboxMenuItem ("Powered");
+            powered_menu_item = new CheckboxMenuItem ("电源");
             powered_menu_item.button.vertical_align = WidgetAlign.START;
             weak Ui.MenuItem weak_powered_menu_item = powered_menu_item;
             powered_menu_item.button.pressed.connect (() => {
@@ -80,14 +80,14 @@ namespace BrickManager {
             });
             content_vbox.add (powered_menu_item.button);
             powered_menu = new Ui.Menu ();
-            visible_menu_item = new CheckboxMenuItem ("Visible");
+            visible_menu_item = new CheckboxMenuItem ("可见");
             visible_menu_item.checkbox.notify["checked"].connect (() =>
                 notify_property ("bt-visible"));
             powered_menu.add_menu_item (visible_menu_item);
             scan_menu_item = new Ui.MenuItem ("???");
             scan_menu_item.button.pressed.connect (() => scan_selected ());
             powered_menu.add_menu_item (scan_menu_item);
-            var devices_label_menu_item = new Ui.MenuItem ("Devices");
+            var devices_label_menu_item = new Ui.MenuItem ("设备");
             devices_label_menu_item.label.horizontal_align = WidgetAlign.CENTER;
             devices_label_menu_item.button.border_bottom = 1;
             devices_label_menu_item.button.margin_bottom = 2;

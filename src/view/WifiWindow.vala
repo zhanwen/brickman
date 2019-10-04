@@ -57,11 +57,11 @@ namespace BrickManager {
             set {
                 _scanning = value;
                 if (_scanning) {
-                    scan_menu_item.label.text = "Scanning...";
+                    scan_menu_item.label.text = "扫描...";
                     scan_menu_item.button.can_focus = false;
                     scan_menu_item.button.focus_next (FocusDirection.DOWN);
                 } else {
-                    scan_menu_item.label.text = "Start Scan";
+                    scan_menu_item.label.text = "开始扫描";
                     scan_menu_item.button.can_focus = true;
                 }
             }
@@ -74,7 +74,7 @@ namespace BrickManager {
         public WifiWindow () {
             title = "Wi-Fi";
             content_vbox.spacing = 0;
-            powered_menu_item = new CheckboxMenuItem ("Powered");
+            powered_menu_item = new CheckboxMenuItem ("电源");
             powered_menu_item.button.vertical_align = WidgetAlign.START;
             weak Ui.MenuItem weak_powered_menu_item = powered_menu_item;
             powered_menu_item.button.pressed.connect (() => {
@@ -88,7 +88,7 @@ namespace BrickManager {
             scan_menu_item = new Ui.MenuItem ("???");
             scan_menu_item.button.pressed.connect (() => scan_selected ());
             powered_menu.add_menu_item (scan_menu_item);
-            var networks_label_menu_item = new Ui.MenuItem ("Networks");
+            var networks_label_menu_item = new Ui.MenuItem ("网络");
             networks_label_menu_item.label.horizontal_align = WidgetAlign.CENTER;
             networks_label_menu_item.button.border_bottom = 1;
             networks_label_menu_item.button.margin_bottom = 2;

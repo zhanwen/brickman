@@ -64,13 +64,13 @@ namespace BrickManager {
             var vbox = new Box.vertical ();
             scroll.add (vbox);
 
-            vbox.add (new Label ("Interface:") {
+            vbox.add (new Label ("接口:") {
                 margin_top = 6
             });
             interface_label = new Label ();
             vbox.add (interface_label);
 
-            vbox.add (new Label ("MAC address:") {
+            vbox.add (new Label ("MAC 地址:") {
                 margin_top = 6
             });
             address_label = new Label ();
@@ -82,7 +82,7 @@ namespace BrickManager {
             mtu_label = new Label ();
             vbox.add (mtu_label);
 
-            vbox.add (new Label ("Method:") {
+            vbox.add (new Label ("方法:") {
                 margin_top = 6
             });
             method_label = new Label ();

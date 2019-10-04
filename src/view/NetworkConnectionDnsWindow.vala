@@ -52,7 +52,7 @@ namespace BrickManager {
         public NetworkConnectionDnsWindow (string title) {
             this.title = title;
 
-            var addresses_label = new Label ("DNS Addresses:") {
+            var addresses_label = new Label ("DNS 地址:") {
                 vertical_align = WidgetAlign.CENTER
             };
             content_vbox.add (addresses_label);
@@ -74,14 +74,14 @@ namespace BrickManager {
             };
             content_vbox.add (button_hbox);
 
-            var add_button = new Button.with_label ("Add") {
+            var add_button = new Button.with_label ("添加") {
                 horizontal_align = WidgetAlign.CENTER,
                 vertical_align = WidgetAlign.CENTER
             };
             add_button.pressed.connect (on_add_button_pressed);
             button_hbox.add (add_button);
 
-            var remove_button = new Button.with_label ("Remove All") {
+            var remove_button = new Button.with_label ("移除所有") {
                 horizontal_align = WidgetAlign.CENTER,
                 vertical_align = WidgetAlign.CENTER
             };
@@ -97,12 +97,12 @@ namespace BrickManager {
                 margin = 3
             };
             dialog.add (dialog_vbox);
-            var message_label = new Label ("Enter DNS address.");
+            var message_label = new Label ("输入 DNS 地址.");
             dialog_vbox.add (message_label);
             var text_entry = new TextEntry ();
             dialog_vbox.add (text_entry);
             dialog_vbox.add (new Spacer ());
-            var add_button = new Button.with_label ("Add") {
+            var add_button = new Button.with_label ("添加") {
                 horizontal_align = WidgetAlign.CENTER
             };
             add_button.pressed.connect (() => {

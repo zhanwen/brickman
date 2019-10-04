@@ -55,7 +55,7 @@ namespace BrickManager {
                 vertical_align = WidgetAlign.CENTER
             };
             content_vbox.add (state_hbox);
-            state_label = new Label ("Status:");
+            state_label = new Label ("状态:");
             state_hbox.add (state_label);
             state_value_label = new Label ("???");
             state_hbox.add (state_value_label);
@@ -63,7 +63,7 @@ namespace BrickManager {
                 border_top = 1
             };
             content_vbox.add (menu);
-            network_connections_menu_item = new Ui.MenuItem.with_right_arrow ("All Network Connections");
+            network_connections_menu_item = new Ui.MenuItem.with_right_arrow ("所有网络连接");
             network_connections_menu_item.button.pressed.connect (() => network_connections_selected ());
             menu.add_menu_item (network_connections_menu_item);
             var tethering_menu_item = new Ui.MenuItem.with_right_arrow ("Tethering");

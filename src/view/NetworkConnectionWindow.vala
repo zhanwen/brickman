@@ -84,7 +84,7 @@ namespace BrickManager {
                 horizontal_align = WidgetAlign.CENTER
             };
             state_vbox.add (state_hbox);
-            state_hbox.add (new Label ("State:") {
+            state_hbox.add (new Label ("状态:") {
                 horizontal_align = WidgetAlign.END,
                 margin_right = 4
             });
@@ -96,12 +96,12 @@ namespace BrickManager {
             var menu = new Ui.Menu ();
             content_vbox.add (menu);
 
-            var connect_menu_item = new Ui.MenuItem ("Connect");
+            var connect_menu_item = new Ui.MenuItem ("连接");
             menu.add_menu_item (connect_menu_item);
             connect_button = connect_menu_item.button;
             connect_button.pressed.connect (on_connect_button_pressed);
 
-            var auto_connect_menu_item = new CheckboxMenuItem ("Connect automatically");
+            var auto_connect_menu_item = new CheckboxMenuItem ("自动连接");
             menu.add_menu_item (auto_connect_menu_item);
             auto_connect_checkbox = auto_connect_menu_item.checkbox;
             auto_connect_checkbox.notify["checked"].connect (() =>
@@ -122,12 +122,12 @@ namespace BrickManager {
 
         void set_connect_button_text () {
             if (_is_connect_busy) {
-                ((Label)connect_button.child).text = "Cancel";
+                ((Label)connect_button.child).text = "取消";
             } else {
                 if (_is_connected) {
-                    ((Label)connect_button.child).text = "Disconnect";
+                    ((Label)connect_button.child).text = "断开连接";
                 } else {
-                    ((Label)connect_button.child).text = "Connect";
+                    ((Label)connect_button.child).text = "连接";
                 }
             }
         }

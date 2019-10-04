@@ -29,7 +29,7 @@ namespace BrickManager {
         internal Ui.Menu menu;
 
         public MotorBrowserWindow () {
-            title ="Motors";
+            title ="发动机";
             menu = new Ui.Menu () {
                 margin_top = -3
             };

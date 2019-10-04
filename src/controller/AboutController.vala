@@ -28,7 +28,7 @@ namespace BrickManager {
     public class AboutController : Object, IBrickManagerModule {
         AboutWindow about_window;
 
-        public string display_name { get { return "关"; } }
+        public string display_name { get { return "关于"; } }
 
         public void show_main_window () {
             if (about_window == null) {

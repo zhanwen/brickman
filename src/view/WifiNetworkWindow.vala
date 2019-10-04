@@ -86,7 +86,7 @@ namespace BrickManager {
                 border_bottom = 1
             };
             content_vbox.add (status_hbox);
-            var status_label = new Label ("Status:") {
+            var status_label = new Label ("状态:") {
                 text_horizontal_align = Grx.TextHAlign.RIGHT
             };
             status_hbox.add (status_label);
@@ -98,7 +98,7 @@ namespace BrickManager {
             menu = new Ui.Menu ();
             content_vbox.add (menu);
 
-            var status_menu_item = new Ui.MenuItem.with_right_arrow ("Status");
+            var status_menu_item = new Ui.MenuItem.with_right_arrow ("状态");
             menu.add_menu_item (status_menu_item);
             status_menu_item.button.pressed.connect (() => status_selected ());
 
@@ -106,12 +106,12 @@ namespace BrickManager {
             menu.add_menu_item (action_menu_item);
             action_menu_item.button.pressed.connect (() => action_selected ());
 
-            forget_menu_item = new Ui.MenuItem ("Forget");
+            forget_menu_item = new Ui.MenuItem ("忘记网络");
             menu.add_menu_item (forget_menu_item);
             forget_menu_item.button.pressed.connect (() => forget_selected ());
 
             network_connection_menu_item =
-                new Ui.MenuItem.with_right_arrow ("Network Connection");
+                new Ui.MenuItem.with_right_arrow ("网络连接");
             menu.add_menu_item (network_connection_menu_item);
             network_connection_menu_item.button.pressed.connect (() =>
                 network_connection_selected ());

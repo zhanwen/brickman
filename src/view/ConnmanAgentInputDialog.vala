@@ -54,10 +54,10 @@ namespace BrickManager {
                 horizontal_align = WidgetAlign.CENTER
             };
             button_vbox.add (button_hbox);
-            cancel_button = new Button.with_label ("Cancel");
+            cancel_button = new Button.with_label ("取消");
             cancel_button.pressed.connect (on_cancel_button_pressed);
             button_hbox.add (cancel_button);
-            accept_button = new Button.with_label ("Accept");
+            accept_button = new Button.with_label ("接受");
             accept_button.pressed.connect (on_accept_button_pressed);
             button_hbox.add (accept_button);
             add (dialog_vbox);
