@@ -575,8 +575,17 @@ namespace BrickManager {
         void add_tethering_technology (Technology technology) {
             if (tethering_window == null)
                 return;
-            if (technology.technology_type in TETHERING_TECHNOLOGIES) {
-                var menu_item = tethering_window.add_menu_item (technology.name);
+            if (technology.technology_type == "bluetooth") {
+				var menu_item = tethering_window.add_menu_item ("蓝牙");
+                technology.bind_property ("tethering", menu_item.checkbox, "checked",
+                    BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL);
+                var handler_id = technology.removed.connect (() =>
+                    tethering_window.remove_menu_item (menu_item));
+                tethering_window.closed.connect (() =>
+                    technology.disconnect (handler_id));
+			}
+            if (technology.technology_type == "gadget") {
+                var menu_item = tethering_window.add_menu_item ("驱动");
                 technology.bind_property ("tethering", menu_item.checkbox, "checked",
                     BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL);
                 var handler_id = technology.removed.connect (() =>
